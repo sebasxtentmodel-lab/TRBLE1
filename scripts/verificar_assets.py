@@ -1,9 +1,14 @@
 from pathlib import Path
 import json
 root = Path(__file__).resolve().parent.parent / 'app/src/main/assets'
+# Vosk Turkish Small 0.3 se distribuye en estructura plana (V1).
+# Vosk acepta la estructura V1 y la moderna V2.
+vosk = root / 'vosk-model-small-tr-0.3'
+v1 = ['final.mdl', 'mfcc.conf', 'Gr.fst', 'HCLr.fst', 'words.txt', 'word_boundary.int']
+v2 = ['am/final.mdl', 'conf/mfcc.conf', 'conf/model.conf', 'graph/HCLr.fst', 'graph/Gr.fst', 'graph/phones/word_boundary.int']
+if not (all((vosk / p).is_file() for p in v1) or all((vosk / p).is_file() for p in v2)):
+    raise SystemExit('FALTAN ASSETS VOSK: ni estructura oficial plana V1 ni moderna V2 completa')
 files = [
-  'vosk-model-small-tr-0.3/am/final.mdl',
-  'vosk-model-small-tr-0.3/conf/model.conf',
   'marian-tr-es/encoder_model.onnx',
   'marian-tr-es/decoder_model.onnx',
   'marian-tr-es/config.json',

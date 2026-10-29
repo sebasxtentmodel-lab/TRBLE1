@@ -1,0 +1,28 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.tuapp.traductor'
+    compileSdk 35
+    ndkVersion '27.0.12077973'
+    defaultConfig {
+        applicationId 'com.tuapp.traductor'
+        minSdk 29
+        targetSdk 35
+        versionCode 2
+        versionName '2.0-offline'
+        ndk { abiFilters 'arm64-v8a' }
+        externalNativeBuild { cmake { cppFlags '-std=c++17 -fexceptions -frtti' } }
+    }
+    externalNativeBuild { cmake { path 'src/main/cpp/CMakeLists.txt' version '3.22.1' } }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    androidResources { noCompress += ['onnx', 'spm', 'json'] }
+    packaging { jniLibs { useLegacyPackaging = true } }
+}
+dependencies {
+    implementation 'com.alphacephei:vosk-android:0.3.47'
+    implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.20.0'
+}
+
+

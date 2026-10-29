@@ -1,2 +1,2 @@
 # Teclado Turco → Español Offline
-Proyecto de método de entrada Android con compilación automatizada de APK.
+Proyecto Android preparado para compilar una APK autónoma mediante GitHub Actions.

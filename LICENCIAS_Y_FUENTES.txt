@@ -1,0 +1,12 @@
+Librerías y modelos del proyecto
+- Vosk: https://alphacephei.com/vosk/ - Apache 2.0
+- Modelo turco Vosk: https://alphacephei.com/vosk/models - Apache 2.0 (revisar modelo concreto)
+- Helsinki-NLP OPUS-MT turco-español: https://huggingface.co/Helsinki-NLP/opus-mt-tr-es - Apache 2.0
+- ONNX Runtime: https://onnxruntime.ai - MIT
+- SentencePiece: https://github.com/google/sentencepiece - Apache 2.0
+
+Las atribuciones y los textos legales de terceros deben conservarse en las
+versiones que se distribuyan; este archivo es una referencia, no reemplaza
+sus licencias integrales.
+
+

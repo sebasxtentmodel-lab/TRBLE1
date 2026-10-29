@@ -1,0 +1,10 @@
+.gradle/
+.build-onnx-mar/
+**/build/
+.idea/
+local.properties
+app/src/main/assets/vosk-model-small-tr-0.3/
+app/src/main/assets/marian-tr-es/
+app/src/main/cpp/third_party/sentencepiece/
+
+

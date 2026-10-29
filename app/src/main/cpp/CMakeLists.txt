@@ -9,6 +9,7 @@ if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/third_party/sentencepiece/CMakeLists.
 endif()
 add_subdirectory(third_party/sentencepiece)
 add_library(sentencepiece_jni SHARED sentencepiece_jni.cpp)
+target_include_directories(sentencepiece_jni PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third_party/sentencepiece/src")
 target_link_libraries(sentencepiece_jni PRIVATE sentencepiece-static log)
 
 
